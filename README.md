@@ -48,26 +48,33 @@ flowchart TD
 ## 📁 Project Structure
 
 ```text
-speech-to-text/
-├── app.py                   # Main Streamlit application (UI + transcription logic)
-├── requirements.txt         # Python dependencies
-├── .env                     # Environment variables (GOOGLE_API_KEY)
+speech-to-text
+├── app.py                       # Streamlit UI and transcription logic
+├── .dockerignore
+├── Dockerfile
+├── docker-compose.yml
+├── .env.example                 # Template for the local GOOGLE_API_KEY configuration
+├── .gitignore
+├── README.md
+├── requirements.txt             # Python dependencies
+├── data/
+│   └── speech.m4a               # Sample audio
 ├── imgs/
-│   └── speech-to-text.PNG   # Demo screenshot for the README
-├── data/                    # Data directory
-└── مستندات و گزارش پروژه/  # Project documentation & reports
+└── مستندات و گزارش پروژه/
+    └── گزارش نهایی.pdf
 ```
 
 ## 🛠️ Technology Stack
 
-| Layer                       | Technology                                                          | Purpose                                         |
-| --------------------------- | ------------------------------------------------------------------- | ----------------------------------------------- |
-| **Frontend / App**          | [Streamlit](https://streamlit.io) (1.65.0)                          | Web UI, file uploader, audio player, RTL layout |
-| **AI / Transcription**      | [Google Gemini](https://ai.google.dev/) via `google-genai` (2.33.0) | Speech-to-text transcription model              |
-| **Environment**             | `python-dotenv` (1.2.4)                                             | Loads `GOOGLE_API_KEY` from `.env`              |
-| **Language**                | Python (≥ 3.12)                                                     | Application runtime                             |
-| **Styling**                 | Custom CSS + Google Fonts (Vazirmatn)                               | RTL Persian UI and typography                   |
-| **Supported audio formats** | MP3, WAV, M4A, OGG, FLAC                                            | Input file types                                |
+| Layer                       | Technology                                                                  | Purpose                                         |
+| --------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------- |
+| **Frontend / App**          | [Streamlit](https://streamlit.io) 1.65.0                                    | Web UI, file uploader, audio player, RTL layout |
+| **AI / Transcription**      | [Google Gemini](https://ai.google.dev/) (`gemini-3.5-transcribe`) via `google-genai` 2.33.0 | Speech-to-text transcription                    |
+| **Configuration**           | `python-dotenv` 1.2.4                                                       | Loads `GOOGLE_API_KEY` from `.env`              |
+| **Language / Runtime**      | Python 3.12                                                                 | Application runtime                             |
+| **Styling**                 | Custom CSS + Google Fonts (Vazirmatn)                                       | RTL Persian UI and typography                   |
+| **Containerization**        | Docker + Docker Compose                                                     | Build and run the app in a container            |
+| **Supported audio formats** | MP3, WAV, M4A, OGG, FLAC                                                    | Input file types                                |
 
 ## 🚀 How to Run the Project
 
