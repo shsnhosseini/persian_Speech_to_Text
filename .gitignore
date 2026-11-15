@@ -1,0 +1,4 @@
+__pycache__/
+PM/
+.env
+!.env.example
